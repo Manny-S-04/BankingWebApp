@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>User Details</title>
+</head>
+<body>
+
+
+	<p th:text="'First Name: ' + ${session.firstname}" />
+	<br>
+	<p th:text="'Last Name: ' + ${session.lastname}" />
+	<br>
+	<p th:text="'Email: ' + ${session.email}" />
+	<br>
+	<p th:text="'Password: ' + ${session.password}" />
+	<br>
+
+	<form method="get" action="/accountdetails">
+		<input type="hidden" id="p" name="p" required><br> <br>
+		<button type="submit">Account Details</button>
+	</form>
+
+
+	<a href="/logout">Logout</a>
+
+</body>
+</html>

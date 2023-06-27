@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Add Account</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <h2>Add Account</h2>
+
+    <form method="post" action="/addaccount">
+        <label for="accountType">Select Account Type:</label><br>
+        <input type="radio" id="current" name="accountType" value="current">
+        <label for="current">Current Account</label><br>
+        <input type="radio" id="savings" name="accountType" value="savings">
+        <label for="savings">Savings Account</label><br><br>
+
+        <button type="submit">Create Account</button>
+    </form>
+</body>
+
+</html>

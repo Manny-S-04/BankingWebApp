@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <title>Transaction History</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <h1>Transaction History</h1>
+
+    <h2>Current Account</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Transaction Type</th>
+                <th>Amount</th>
+                <th>New Balance</th>
+                <th>Date and Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="transaction : ${session.currtransactions}">
+                <td th:text="${transaction.transactionId}"></td>
+                <td th:text="${transaction.transactionType}"></td>
+                <td th:text="${transaction.amount}"></td>
+                <td th:text="${transaction.newBalance}"></td>
+                <td th:text="${transaction.dateTime}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Savings Account</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Transaction Type</th>
+                <th>Amount</th>
+                <th>New Balance</th>
+                <th>Date and Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="transaction : ${session.savtransactions}">
+                <td th:text="${transaction.transactionId}"></td>
+                <td th:text="${transaction.transactionType}"></td>
+                <td th:text="${transaction.amount}"></td>
+                <td th:text="${transaction.newBalance}"></td>
+                <td th:text="${transaction.dateTime}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/accountdetails">Back to Account Details</a>
+
+</body>
+
+</html>
